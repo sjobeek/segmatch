@@ -21,7 +21,7 @@ $ wstool update
 Finally build the *laser_mapper* package which will compile all *SegMatch* modules:
 ```
 $ cd ~/catkin_ws
-$ catkin build -DCMAKE_BUILD_TYPE=Release laser_mapper
+$ catkin build -DCMAKE_BUILD_TYPE=Release -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF laser_mapper
 ```
 See this link for installing [catkin_tools](http://catkin-tools.readthedocs.io/en/latest/installing.html). Building dependencies will require some time according to which new packages need to be built (eg. Building the `pcl_catkin` package can take up to two hours). Building `pcl_catkin` might fail if you do not have sufficient RAM. It can help to add `-j2` to catkin build in order to limit the parallel jobs and reduce memory usage.
 
